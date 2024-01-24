@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+    id 'io.quarkus'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
+    implementation 'io.quarkus:quarkus-resteasy'
+    implementation 'io.quarkus:quarkus-arc'
+    testImplementation 'io.quarkus:quarkus-junit5'
+
+    testImplementation 'io.quarkus:quarkus-junit5-mockito'
+    testImplementation 'io.rest-assured:rest-assured'
+    implementation group: 'io.quarkus', name: 'quarkus-mongodb-panache'
+    implementation group: 'io.quarkus', name: 'quarkus-resteasy-jackson'
+    implementation group: 'io.quarkus', name: 'quarkus-rest-client'
+    implementation group: 'io.quarkus', name: 'quarkus-rest-client-jackson'
+    implementation group: 'io.quarkus', name: 'quarkus-jdbc-mysql'
+    implementation group: 'io.quarkus', name: 'quarkus-hibernate-orm-panache'
+
+
+}
+
+group 'org.acme'
+version '1.0.0-SNAPSHOT'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+compileJava {
+    options.encoding = 'UTF-8'
+    options.compilerArgs << '-parameters'
+}
+
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
