@@ -14,7 +14,7 @@ Clone this repository:
 
 bash
 Copy code
-git clone https://github.com/ShehanThamoda/quarkus-sample-basic-project.git
+git clone https://github.com/ShehanThamoda/quarkus-basic-service.git
 cd quarkus-sample-basic-project
 Build and run the project:
 
